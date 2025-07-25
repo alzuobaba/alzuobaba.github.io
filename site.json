@@ -83,13 +83,7 @@
       "name": "购物网站",
       "links": [
         { "title": "淘宝", "url": "https://www.taobao.com" },
-        { "title": "京东", "url": "https://www.jd.com" },
-        { "title": "拼多多", "url": "https://www.pinduoduo.com" },
-        { "title": "天猫", "url": "https://www.tmall.com" },
-        { "title": "苏宁易购", "url": "https://www.suning.com" },
-        { "title": "唯品会", "url": "https://www.vip.com" },
-        { "title": "当当网", "url": "https://www.dangdang.com" },
-        { "title": "亚马逊", "url": "https://www.amazon.cn" }
+        { "title": "京东", "url": "https://www.jd.com" }
       ]
     }
   ]

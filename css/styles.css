@@ -309,7 +309,7 @@ body {
 }
 
 .website-card {
-    background: var(--bg-secondary);
+    background: transparent;
     border-radius: var(--radius-md);
     padding: var(--spacing-sm);
     text-decoration: none;
@@ -324,7 +324,7 @@ body {
     transform: translateY(-3px) scale(1.02);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent-color);
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
 }
 
 .website-icon {
