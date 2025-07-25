@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "name": "生活服务与实用工具",
+      "links": [
+        { "title": "中国政府网", "url": "https://www.gov.cn" },
+        { "title": "社保查询", "url": "https://si.12333.gov.cn" },
+        { "title": "个人所得税", "url": "https://www.chinatax.gov.cn" },
+        { "title": "交管12123", "url": "https://www.12123.gov.cn/" },
+        { "title": "中国天气网", "url": "https://www.weather.com.cn" },
+        { "title": "高德地图", "url": "https://www.amap.com" },
+        { "title": "百度地图", "url": "https://map.baidu.com" },
+        { "title": "快递100", "url": "https://www.kuaidi100.com" },
+        { "title": "美团", "url": "https://www.meituan.com" }
+      ]
+    },
+    {
+      "name": "健康与养生",
+      "links": [
+        { "title": "国家卫健委", "url": "https://www.nhc.gov.cn" },
+        { "title": "北京协和医院", "url": "https://www.pumch.cn" },
+        { "title": "好大夫在线", "url": "https://www.haodf.com" },
+        { "title": "健康中国", "url": "https://www.jkzg.cn" },
+        { "title": "科普中国", "url": "https://www.kepuchina.cn" },
+        { "title": "中国营养学会", "url": "https://www.cnsoc.org" },
+        { "title": "国家中医药管理局", "url": "https://www.satcm.gov.cn" },
+        { "title": "简单心理", "url": "https://www.jiandanxinli.com" }
+      ]
+    },
+    {
+      "name": "财经与理财",
+      "links": [
+        { "title": "中国人民银行", "url": "https://www.pbc.gov.cn" },
+        { "title": "证监会", "url": "https://www.csrc.gov.cn" },
+        { "title": "上交所", "url": "https://www.sse.com.cn" },
+        { "title": "深交所", "url": "https://www.szse.cn" },
+        { "title": "财新网", "url": "https://www.caixin.com" },
+        { "title": "第一财经", "url": "https://www.yicai.com" },
+        { "title": "国家税务总局", "url": "https://www.chinatax.gov.cn" },
+        { "title": "贝壳找房", "url": "https://www.ke.com" }
+      ]
+    },
+    {
+      "name": "家庭与教育",
+      "links": [
+        { "title": "教育部", "url": "https://www.moe.gov.cn" },
+        { "title": "国家中小学智慧教育平台", "url": "https://basic.smartedu.cn" },
+        { "title": "网易公开课", "url": "https://open.163.com" },
+        { "title": "京医通", "url": "https://www.bjguahao.gov.cn" },
+        { "title": "好好住", "url": "https://www.haohaozhu.com" },
+        { "title": "京东", "url": "https://www.jd.com" },
+        { "title": "天猫", "url": "https://www.tmall.com" }
+      ]
+    },
+    {
+      "name": "兴趣与学习",
+      "links": [
+        { "title": "人民网", "url": "https://www.people.com.cn" },
+        { "title": "新华网", "url": "https://www.xinhuanet.com" },
+        { "title": "国家数字图书馆", "url": "https://www.nlc.cn" },
+        { "title": "微信读书", "url": "https://weread.qq.com" },
+        { "title": "故宫博物院", "url": "https://www.dpm.org.cn" },
+        { "title": "Bilibili", "url": "https://www.bilibili.com" },
+        { "title": "喜马拉雅", "url": "https://www.ximalaya.com" },
+        { "title": "中国大学MOOC", "url": "https://www.icourse163.org" },
+        { "title": "携程", "url": "https://www.ctrip.com" }
+      ]
+    },
+    {
+      "name": "社区与交流",
+      "links": [
+        { "title": "知乎", "url": "https://www.zhihu.com" }
+      ]
+    }
+  ]
+}

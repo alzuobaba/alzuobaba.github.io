@@ -9,12 +9,17 @@ class NavigationApp {
         this.categoriesContainer = document.getElementById('categories');
         this.loadingElement = document.getElementById('loading');
         this.themeToggle = document.getElementById('themeToggle');
+        this.dataSourceToggle = document.getElementById('dataSourceToggle');
+        this.currentDataSource = localStorage.getItem('dataSource') || 'site.json';
         
         this.init();
     }
     
     async init() {
         try {
+            // 初始化数据源切换
+            this.initDataSourceToggle();
+
             // 加载数据
             await this.loadData();
             
@@ -44,7 +49,7 @@ class NavigationApp {
      */
     async loadData() {
         try {
-            const response = await fetch('site.json');
+            const response = await fetch(this.currentDataSource);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -107,6 +112,44 @@ class NavigationApp {
         if (themeIcon) {
             themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
+    }
+
+    /**
+     * 初始化数据源切换
+     */
+    initDataSourceToggle() {
+        this.updateDataSourceButton();
+        this.dataSourceToggle.addEventListener('click', () => {
+            this.currentDataSource = this.currentDataSource === 'site.json' ? 'site-pro.json' : 'site.json';
+            localStorage.setItem('dataSource', this.currentDataSource);
+            this.updateDataSourceButton();
+            this.rerenderPage();
+        });
+    }
+
+    /**
+     * 更新数据源切换按钮的文本
+     */
+    updateDataSourceButton() {
+        const buttonText = this.dataSourceToggle.querySelector('.button-text');
+        if (this.currentDataSource === 'site.json') {
+            buttonText.textContent = '标准版';
+        } else {
+            buttonText.textContent = '专业版';
+        }
+    }
+
+    /**
+     * 重新渲染页面
+     */
+    async rerenderPage() {
+        this.loadingElement.style.display = 'flex';
+        this.categoriesContainer.innerHTML = '';
+        await this.loadData();
+        this.renderGroupNavigation();
+        this.renderSmartLayout();
+        this.preloadIcons();
+        this.hideLoading();
     }
     
     /**

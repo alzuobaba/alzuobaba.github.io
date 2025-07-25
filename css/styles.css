@@ -198,7 +198,7 @@ body {
 }
 
 .sidebar {
-    width: 240px;
+    width: 180px;
     flex-shrink: 0;
     position: fixed;
     top: 80px; /* 留出header空间 */
@@ -216,10 +216,34 @@ body {
     flex: 1;
     padding: 0 var(--spacing-xl);
     min-width: 0;
-    margin-left: 240px;
+    margin-left: 180px;
 }
 
 /* --- 💎 侧边栏 --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.button-switch {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+.button-switch:hover {
+    background: var(--accent-color);
+    color: var(--accent-text);
+    border-color: var(--accent-color);
+}
 
 .theme-toggle-small {
     background: var(--bg-secondary);
@@ -349,9 +373,7 @@ body {
 
 .website-title {
     font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    min-width: 0;
 }
 
 /* --- ⚙️ 其他组件 --- */
@@ -402,10 +424,11 @@ body {
 /* --- 📱 响应式设计 --- */
 @media (max-width: 1024px) {
     .sidebar {
-        width: 200px;
+        width: 160px;
     }
     .main-content {
         padding: 0 var(--spacing-lg);
+        margin-left: 160px;
     }
 }
 
@@ -435,5 +458,6 @@ body {
     }
     .main-content {
         padding: var(--spacing-lg) var(--spacing-md);
+        margin-left: 0;
     }
 }
