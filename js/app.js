@@ -1,5 +1,5 @@
 /**
- * 主应用逻辑 - 两组横向排列布局
+ * 主应用逻辑 - 智能布局（生活助手单独一行）
  * 网址导航页面的核心功能
  */
 
@@ -21,16 +21,11 @@ class NavigationApp {
             // 初始化主题
             this.initTheme();
             
-            // 初始化搜索
-            if (window.searchEngine) {
-                window.searchEngine.setData(this.data.categories);
-            }
-            
             // 渲染组导航
             this.renderGroupNavigation();
             
-            // 渲染两组横向布局
-            this.renderTwoGroups();
+            // 渲染智能布局（生活助手单独一行）
+            this.renderSmartLayout();
             
             // 预加载图标
             this.preloadIcons();
@@ -157,9 +152,9 @@ class NavigationApp {
     }
     
     /**
-     * 渲染两组横向布局
+     * 渲染智能布局（生活助手单独占一行）
      */
-    renderTwoGroups() {
+    renderSmartLayout() {
         if (!this.data || !this.data.categories) {
             this.showError('暂无数据');
             return;
@@ -167,36 +162,30 @@ class NavigationApp {
         
         this.categoriesContainer.innerHTML = '';
         
-        // 创建两组容器
+        // 创建智能布局容器
         const wrapper = document.createElement('div');
         wrapper.className = 'categories-wrapper';
         
-        // 将分类分成两组
-        const midPoint = Math.ceil(this.data.categories.length / 2);
-        const group1 = this.data.categories.slice(0, midPoint);
-        const group2 = this.data.categories.slice(midPoint);
+        // 分离生活助手和其他分类
+        const lifeHelper = this.data.categories.find(cat => cat.name === "生活助手");
+        const otherCategories = this.data.categories.filter(cat => cat.name !== "生活助手");
         
-        // 创建第一组
-        const group1Div = document.createElement('div');
-        group1Div.className = 'group-column';
-        group1.forEach((category, index) => {
-            const categoryElement = this.createCategoryElement(category);
-            categoryElement.id = `category-${index}`;
-            group1Div.appendChild(categoryElement);
-        });
+        // 先渲染生活助手（占满一行）
+        if (lifeHelper) {
+            const lifeHelperElement = this.createCategoryElement(lifeHelper);
+            lifeHelperElement.id = 'category-0';
+            lifeHelperElement.classList.add('special-category');
+            wrapper.appendChild(lifeHelperElement);
+        }
         
-        // 创建第二组
-        const group2Div = document.createElement('div');
-        group2Div.className = 'group-column';
-        group2.forEach((category, index) => {
-            const actualIndex = midPoint + index;
+        // 渲染其他分类（2列布局）
+        otherCategories.forEach((category, index) => {
             const categoryElement = this.createCategoryElement(category);
+            const actualIndex = lifeHelper ? index + 1 : index;
             categoryElement.id = `category-${actualIndex}`;
-            group2Div.appendChild(categoryElement);
+            wrapper.appendChild(categoryElement);
         });
         
-        wrapper.appendChild(group1Div);
-        wrapper.appendChild(group2Div);
         this.categoriesContainer.appendChild(wrapper);
     }
     

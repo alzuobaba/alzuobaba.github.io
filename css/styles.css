@@ -77,32 +77,24 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-/* 大字体头部 */
+/* 紧凑头部 */
 .header {
     background-color: var(--bg-secondary);
-    padding: var(--spacing-2xl) 0;
-    border-bottom: 2px solid var(--border-color);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-lg);
 }
 
 .site-title {
-    font-size: var(--font-size-title);
+    font-size: 28px;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 .site-subtitle {
-    font-size: var(--font-size-subtitle);
+    font-size: var(--font-size-normal);
     color: var(--text-secondary);
-}
-
-.header-controls {
-    display: flex;
-    gap: var(--spacing-lg);
-    align-items: center;
-    margin-top: var(--spacing-xl);
-    flex-wrap: wrap;
 }
 
 /* 大搜索框 */
@@ -211,16 +203,16 @@ body {
 /* 两栏布局 - 老年人友好 */
 .categories-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-2xl);
-    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    align-items: stretch;
+}
+/* 生活助手特殊样式 - 占满一行 */
+.category.special-category {
+    grid-column: 1 / -1;
 }
 
-.group-column {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
-}
+/* 移除 .group-column 样式，不再需要 */
 
 .category {
     background-color: var(--bg-secondary);
@@ -229,6 +221,7 @@ body {
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-sm);
     transition: box-shadow 0.2s ease;
+    flex: 1;
 }
 
 .category:hover {
@@ -432,13 +425,32 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-.sidebar-nav h3 {
-    font-size: var(--font-size-large);
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 2px solid var(--border-color);
+.sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.theme-toggle-small {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xs);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-small:hover {
+    border-color: var(--accent-color);
+    background-color: var(--bg-secondary);
 }
 
 .sidebar-nav-container {

@@ -16,25 +16,18 @@
     <header class="header">
         <div class="container">
             <h1 class="site-title">实用导航</h1>
-            <p class="site-subtitle">精选高效工具</p>
-            
-            <div class="header-controls">
-                <div class="search-box">
-                    <input type="search" id="searchInput" placeholder="搜索..." aria-label="搜索">
-                    <button type="button" id="clearSearch" aria-label="清除">×</button>
-                </div>
-                
-                <button type="button" id="themeToggle" class="theme-toggle" aria-label="切换主题">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
         </div>
     </header>
 
     <div class="layout-container">
         <aside class="sidebar">
             <nav id="groupNavigation" class="sidebar-nav" style="display: none;">
-                <h3>分类导航</h3>
+                <h3>导航栏</h3>
+                <div class="sidebar-header">
+                    <button type="button" id="themeToggle" class="theme-toggle-small" aria-label="切换主题">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
                 <div class="sidebar-nav-container">
                     <!-- 动态加载组导航 -->
                 </div>
@@ -45,11 +38,6 @@
             <div class="container">
                 <div id="loading" class="loading">
                     <div class="loading-spinner"></div>
-                </div>
-                
-                <div id="searchResults" class="search-results" style="display: none;">
-                    <h2>搜索结果</h2>
-                    <div id="resultsList" class="links-grid"></div>
                 </div>
                 
                 <div id="categories" class="categories">
