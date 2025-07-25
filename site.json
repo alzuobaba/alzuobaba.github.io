@@ -50,21 +50,16 @@
       ]
     },  
     {
-      "name": "电影",
+      "name": "影视",
       "links": [
         { "title": "爱奇艺", "url": "https://www.iqiyi.com" },
-        { "title": "NoVIP影视", "url": "https://www.novipnoad.net/" },
+        { "title": "NoVIP", "url": "https://www.novipnoad.net/" },
         { "title":"修罗影视", "url":"https://xl01.com.de/"},
-        { "title": "低端影视-电影", "url": "https://ddys.pro/category/movie/chinese-movie/" }
+        { "title":"追剧狂人", "url": "https://www.zjkrmv.cc/"},
+        { "title": "皮皮影视", "url": "https://ppdys.me/vodtype/2.html" },
+        { "title": "低端电影", "url": "https://ddys.pro/category/movie/chinese-movie/" }      
       ]
 
-    },
-    {
-      "name": "电视剧",
-      "links": [
-        { "title": "皮皮影视", "url": "https://ppdys.me/vodtype/2.html" },
-        { "title": "低端影视-电视剧", "url": "https://ddys.pro/category/drama/cn-drama/" }
-      ]
     },
     {
       "name": "电视直播",

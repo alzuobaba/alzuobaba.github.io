@@ -103,9 +103,9 @@ class NavigationApp {
         localStorage.setItem('theme', theme);
         
         // 更新主题图标
-        const icon = this.themeToggle.querySelector('.theme-icon');
-        if (icon) {
-            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        const themeIcon = document.querySelector('.theme-icon');
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
     }
     
@@ -142,12 +142,15 @@ class NavigationApp {
                 block: 'start'
             });
             
-            // 高亮效果
-            categories[index].style.transition = 'transform 0.3s ease';
-            categories[index].style.transform = 'scale(1.02)';
+            // 优雅的高亮效果
+            categories[index].style.transition = 'all 0.3s ease-in-out';
+            categories[index].style.transform = 'scale(1.01)';
+            categories[index].style.boxShadow = '0 0 20px rgba(56, 189, 248, 0.5)';
+            
             setTimeout(() => {
                 categories[index].style.transform = 'scale(1)';
-            }, 300);
+                categories[index].style.boxShadow = '';
+            }, 400);
         }
     }
     
